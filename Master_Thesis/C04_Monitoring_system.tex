@@ -2,115 +2,172 @@
 
 \section{Required performance}
 
-At the SuperKEKB accelerator, the beam revolution period is approximately 10 us. Therefore, high time resolution is required to measure injection beam loss on a turn-by-turn basis. In addition, the sensors installed near the collimators are connected to readout boards via cables several hundreds meters long, resulting in signal attenuation. Thus, a sufficient high signal gain is required. Furthermore, the sensors have mo Sensor ust be radiation tolerant because the regions around the collimators are exposed to high radiation levels. 
+At the SuperKEKB accelerator, the beam revolution period is approximately $10 \mu\mathrm{s}$ . Therefore, a time resolution of several tens of nanoseconds is required to measure the injection beam loss turn-by-turn. In addition, the sensors installed near the collimators are connected to the readout boards via cables several hundreds of meters long, resulting in signal attenuation. Sufficient signal gain is therefore necessary to ensure reliable signal detection. Furthermore, the sensors need to have radiation tolerance because the regions around the collimators are exposed to high radiation levels, with dose rates reaching hundreds $\mu\mathrm{Sv}\mathrm{/h}$. 
 
 
 \section{CLAWS sensor}
-The CLAWS consists of a plastic scintillator and silicon photomultiplier (SiPM) \cite{Windel:2021zqa}. The scintillator serves as an active material and pruduce scintillator photons when traversed by charged particles. It has $30 \times30 \times 3 mm^3$ cube-shaped and central recess to accommodate the SiPM, which detects scintillator photons. 
-The scintillator is wrapped in reflective foil to increases the number of photons detected by the SiPM. The reflective foil is covered with black tape to suppress the detection of unwanted ambient light.
+The CLAWS consists of a plastic scintillator and a silicon photomultiplier (SiPM) \cite{Windel:2021zqa}. The scintillator serves as an active material and produces scintillator photons when traversed by charged particles. It is a square scintillator measuring $30 \times30 \times 3\mathrm{mm}^3$, with a central recess to accommodate the SiPM, which detects scintillation photons. 
 
-The CLAWS sensors were originally developed to monitor radiation levels in the interaction region (IR) and provide input to the beam-abort system. More recently, CLAWS sensors have been installed near the collimators for the beam-abort system. The sensors have a time resolution of O(10 ns) and a gain of $10^5-10^6$, which are sufficient for measuring injection beam loss turn-by-turn. Since the radiation levels at the IR are significantly higher than those along the beam line, the sensor has demonstrated sufficient radiation tolerance for this application.
+The SiPM used in this system is the S13360-1325PE, which has a photosensitive area of $1.3 \times 1.3 \mathrm{mm}^2$ and a pixel pitch of $25\mu\mathrm{m}$. It operates at 53V, which is considerably lower than the typical operating voltage of the photomultiplier (PMT), approximately 1000 V. This low-voltage operation relaxes the power supply requirements of the system.
+
+The plate-shaped scintillator \cite{scintillator} was machined to the required shape by the KEK Mechanical Engineering Center. 
+
+The scintillator is wrapped in reflective foil to increase the number of photons detected by the SiPM. The reflective foil is covered with black tape to suppress the detection of unwanted ambient light.
+
+The CLAWS system is powered by a 13 V power supply \cite{CLAWS_power_supply}. A voltage converter board increases the voltage to approximately 53 V, which is then supplied to the CLAWS sensors via a CAT cable.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\columnwidth]{Figures/C04_Monitoring_system/receiver_top.png}
+    \caption{Receiver board \cite{CLAWS_hardware}}
+    \label{fig:Receiver board}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\columnwidth]{Figures/C04_Monitoring_system/power_supply_lt3571_single_top.png}
+    \caption{Power supply board \cite{CLAWS_hardware}}
+    \label{fig:Power supply board}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\columnwidth]{Figures/C04_Monitoring_system/power.png}
+    \caption{Power supply \cite{CLAWS_power_supply}}
+    \label{fig:Power supply}
+\end{figure}
+
+The CLAWS sensors were originally developed to monitor radiation levels in the interaction region (IR) and provide input to the beam-abort system. More recently, CLAWS sensors have been installed near the collimators for the beam-abort system. The sensors have a time resolution of O(10 ns) and a gain of $10^5-10^6$, which are sufficient to measure injection beam loss turn-by-turn. Since the radiation levels in the IR are significantly higher than those along the beam line, the sensor has demonstrated sufficient radiation tolerance for this application. 
+
+During the 2024 operation, a CLAWS sensor was installed at the D01V1 collimator to investigate its capability to measure injection beam losses. Analysis of the collected data revealed correlations between the measured injection beam loss and both beam current and collimator jaw opening. Based on these results, we decided to expand the CLAWS system to enable more comprehensive measurements and analysis of injection beam loss.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\columnwidth]{Figures/C04_Monitoring_system/CLAWS02.png}
-    \caption{CLAWS sensor}
-    \label{fig:CLAWS}
+    \caption{The structure of CLAWS sensor}
+    \label{fig:The structure of CLAWS sensor}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.6\columnwidth]{Figures/C04_Monitoring_system/CLAWS01.png}
     \caption{CLAWS sensor}
-    \label{fig:CLAWS}
+    \label{fig:CLAWS sensor}
 \end{figure}
+
+A total of 10 CLAWS sensors were assembled for operation starting in November 2025. After assembly, each sensor was tested using cosmic rays and radioactive sources to verify its performance. The sensors that passed these tests and were confirmed to be functioning properly were selected for use in the system.
+
 
 \section{Install position}
 
 (Overview of the collimator system and geometry is described in the previous chapter)
 
-The previous loss monitor observed long-lasting injection beam loss at the vertical collimators. To monitor these losses in more detail, CLAWS sensors are installed at all vertical collimators and several horizontal collimators.  
+The previous loss monitor observed long-lasting injection beam loss in vertical collimators. To monitor these losses in more detail, CLAWS sensors are installed in all vertical collimators and several horizontal collimators.  
+
 
 \begin{table}[htbp]
     \centering
-    \caption{Collimators equipped with CLAWS sensors in the LER and HER.}
+    \caption{Collimators equipped with CLAWS sensors in the LER and HER, with installation dates.}
     \label{tab:claws_collimators}
-    \begin{tabular}{ll}
+    \begin{tabular}{lll}
         \toprule
-        \multicolumn{2}{c}{LER} \\
-        \cmidrule(lr){1-2}
-        Type & Collimator name \\
+        \multicolumn{3}{c}{LER} \\
+        \cmidrule(lr){1-3}
+        Type & Collimator name & Installation date \\
         \midrule
-        Vertical   & D2V1 \\
-        Vertical   & D3V4 \\
-        Vertical   & D5V1 \\
-        Vertical   & D6V1 \\
-        Horizontal & D6H3 \\
+        Vertical   & D2V1 & 2025-10-03 \\
+        Vertical   & D3V4 & 2025-10-16 \\
+        Vertical   & D5V1 & 2025-10-16 \\
+        Vertical   & D6V1 & 2025-10-16 \\
+        Horizontal & D6H3 & 2025-12-10 \\
         \bottomrule
     \end{tabular}
-    \hspace{1.5cm}
-    \begin{tabular}{ll}
+
+    \vspace{1.0cm}
+
+    \begin{tabular}{lll}
         \toprule
-        \multicolumn{2}{c}{HER} \\
-        \cmidrule(lr){1-2}
-        Type & Collimator name \\
+        \multicolumn{3}{c}{HER} \\
+        \cmidrule(lr){1-3}
+        Type & Collimator name & Installation date \\
         \midrule
-        Vertical   & D1V1  \\
-        Vertical   & D9V1  \\
-        Horizontal & D9H2  \\
-        Vertical   & D9V3  \\
-        Vertical   & D12V1 \\
-        Vertical   & D12V2 \\
-        Vertical   & D12V3 \\
-        Vertical   & D12V4 \\
+        Vertical   & D1V1  & 2024-MM-DD \\
+        Vertical   & D9V1  & 2026-03-18 \\
+        Horizontal & D9H2  & 2026-03-18 \\
+        Vertical   & D9V3  & 2025-09-30 \\
+        Vertical   & D12V1 & 2026-05-20 \\
+        Vertical   & D12V2 & 2026-05-20 \\
+        Vertical   & D12V3 & 2026-05-20 \\
+        Vertical   & D12V4 & 2025-10-16 \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=1.0\columnwidth]{Figures/C04_Monitoring_system/mainring.png}
-    \caption{Installed collimators}
-    \label{fig:Installed collimators}
+    \includegraphics[width=0.8\columnwidth]{Figures/C04_Monitoring_system/Mainring.png}
+    \caption{Collimator system geometry}
+    \label{fig:Collimator system geometry}
 \end{figure}
 
-The CLAWS sensors are mounted on support structure approximately 1m downstream of the collimators. Since radiation showers are expected to propagate parallel to the beam pipe, sensors were installed so that the elevation was as small as possible. 
+The CLAWS sensors are mounted on a support structure approximately 1m downstream of the collimators. To detect radiation showers propagating along the beam pipe, the sensors are positioned as close to the beam pipe as possible in the vertical direction.
+
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\columnwidth]{Figures/C04_Monitoring_system/install.png}
-    \caption{CLAWS sensor install position}
-    \label{fig:install_position}
+    \includegraphics[width=0.5\columnwidth]{Figures/C04_Monitoring_system/install01.png}
+    \caption{CLAWS sensor is mounted on support structure}
+    \label{fig:CLAWS sensor is mounted on support structure}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\columnwidth]{Figures/C04_Monitoring_system/install02.png}
+    \caption{CLAWS sensor is installed approximately 1m downstream of the collimator}
+    \label{fig:CLAWS sensor is installed approximately 1m downstream of the collimator}
 \end{figure}
 
 
 \section{Readout}
 
-The CLAWS sigals are acquired synchronously with the 1 Hz prescaled injection kicker signal. The signals are transmitted through cables several hundreds meters long to the power supply buildings on the ground. Receiver boards installed in these buildings condition the signal before they are read by oscilloscopes. The oscilloscopes are controlled by PCs,  and waveform data covering 23 ms window after the trigger is acquired.
+The CLAWS signals are acquired synchronously with the 1 Hz prescaled injection kicker signal. The signals are transmitted through cables several hundred meters long to the power supply buildings on the ground. The receiver boards installed in these buildings condition the signals before they are read by oscilloscopes. The oscilloscopes are controlled by PCs,  and record waveform data over a 23 ms window after the trigger. By synchronizing waveform acquisition with the injection kicker signal, the timing of of the beam losses can be determined relative to the injection event. 
+
+Since injection beam losses can persist approximately 20 ms, 23 ms acquisition window is long enough to capture their time evolution. In addition, since it is not necessary to record every injection event for beam loss monitoring, a 1 Hz prescaled injection kicker signal is used as the trigger. This also facilitates the identification of individual injection events in the acquired waveform data.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\columnwidth]{Figures/C04_Monitoring_system/receiver01.png}
+    \caption{Receiver electronics}
+    \label{fig:Receiver electronics in the power building. The signal from the CLAWS sensor is send to receiver board (center of the picture) and then to the blue oscilloscope next to it. The oscilloscope is controled by a PC located on the upper step.}
+\end{figure}
 
 \section{Data correction, processing, recording}
 
-The raw waveform data acquired oevr 23ms window consist of approximately 1 million samples, making it impractical to store all the raw data. Therefore, the following quantities are calculated from the raw waveforms and recorded instead: \\
+The raw waveform data acquired over the 23ms window consist of approximately 1 million samples, making it impractical to store all the raw data. Therefore, the following quantities are calculated from the raw waveforms and instead recorded: \\
 
 \begin{enumerate}
     \item \textbf{Turn-by-turn beam loss:}
-    The raw waveform is integrated over each turn after applying a threshold to identify beam-loss signals.
+    The raw waveform is integrated over each turn after applying a threshold to identify beam-loss signals. This quantity provides information on the temporal  structure of injection beam losses, including their frequency components.
 
     \item \textbf{Total beam loss per injection:}
     The sum of the turn-by-turn beam-loss values over the acquisition window:
     \[
         L_{\mathrm{total}} = \sum_i L_i.
     \]
+    This quantity provides a rough indicates of the injection quality and can be used to monitor changes in injection conditions. 
 
     \item \textbf{Beam loss before and after 1 ms:}
-    The beam loss is integrated separately from the injection trigger to 1 ms and from 1 ms to the end of the acquisition window.
+    The beam loss is integrated separately from the injection trigger to 1 ms and from 1 ms to the end of the acquisition window. The beam loss during the first millisecond is considered to be primarily associated with injection oscillations, whereas beam-beam effect is considered one of the main contributor to beam loss after 1 ms. Comparing the beam loss in these two intervals helps distinguish the contributions of different loss mechanisms. 
 
     \item \textbf{Centroid of the beam-loss duration:}
-    The time centroid of the beam-loss signal for each injection is defined as
+    The centroid of time of the beam-loss signal for each injection is defined as
     \[
         t_{\mathrm{centroid}}
         = \frac{\sum_i t_i L_i}{\sum_i L_i},
     \]
-    where \(t_i\) is the time of the \(i\)-th turn relative to the injection trigger and \(L_i\) is the corresponding beam-loss value.
+    where \(t_i\) is the time of the \(i\)-th turn relative to the injection trigger and \(L_i\) is the corresponding beam-loss value.    
+    This value characterized the temporal distribution of beam losses and can be used to monitor changes in their duration over time. The centroid is used instead of the timing of the last detected signal because it is less sensitive to noise that may produce spurious signals at late times.
+    
 \end{enumerate}
 
 \begin{figure}[htbp]

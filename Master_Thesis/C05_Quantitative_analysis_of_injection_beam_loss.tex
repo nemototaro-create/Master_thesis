@@ -2,52 +2,80 @@
 
 \section{Collimator offset study}
 \subsection{Motivation}
+A collimator offset study measures the offset between the beam position coordinate and the collimator coordinate. By precisely determining this offset, the beam can be scraped symmetrically from both sides, enabling efficient collimation. The procedure is as follows:
 
+\begin{enumerate}
+    \item \textbf{Move both collimator jaws while keeping the jaw gap constant:}
+    Both jaws moved in the same direction, typically in steps of 50 um. 
+
+    \item \textbf{Monitor the beam response}
+
+    \item \textbf{Plot the measured response :}
+    The center position of the collimator jaws is plotted on the x-axis, and the measured value is plotted on the y-axis. The offset is determined by fitting the resulting distribution and identifying the vertex of the fitting function.
+
+\end{enumerate}
+
+Traditionally, the beam life is used as the beam response. For this study, we used injection beam loss as another response.
 
 \subsection{D02V1 collimator}
+The collimator offset study for D02V1 was conducted on November 14, 2025.
 
-\begin{figure}
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\columnwidth]{Figures/C05_Quantitative_analysis/Offset/D02V1.png}
-    \caption{CLAWS sensor}
-    \label{fig:CLAWS}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.6\columnwidth]{Figures/C05_Quantitative_analysis/Offset/D02V1_life.png}
-    \caption{CLAWS sensor}
-    \label{fig:CLAWS}
+    \begin{minipage}{0.48\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/C05_Quantitative_analysis/Offset/D02V1.png}
+        \caption{Injection beam loss fitting result for D02V1}
+        \label{fig:D02V1_loss}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/C05_Quantitative_analysis/Offset/D02V1_life.png}
+        \caption{Beam lifetime fitting result for D02V1}
+        \label{fig:D02V1_lifetime}
+    \end{minipage}
 \end{figure}
 
 
 \subsection{D03V4 collimator}
+The collimator offset study for D03V4 was conducted on November 14, 2025.
 
-\begin{figure}
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\columnwidth]{Figures/C05_Quantitative_analysis/Offset/D03V4.png}
-    \caption{CLAWS sensor}
-    \label{fig:CLAWS}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.6\columnwidth]{Figures/C05_Quantitative_analysis/Offset/D03V4_life.png}
-    \caption{CLAWS sensor}
-    \label{fig:CLAWS}
+    \begin{minipage}{0.48\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/C05_Quantitative_analysis/Offset/D03V4.png}
+        \caption{Injection beam loss fitting result for D03V4}
+        \label{fig:D03V4_loss}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/C05_Quantitative_analysis/Offset/D03V4_life.png}
+        \caption{Beam lifetime fitting result for D03V4}
+        \label{fig:D03V4_lifetime}
+    \end{minipage}
 \end{figure}
 
 
 
 \subsection{D01V1 collimator}
+The collimator offset study for D02V1 was conducted on January 29, 2026.
 
-\begin{figure}
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\columnwidth]{Figures/C05_Quantitative_analysis/Offset/D01V1.png}
-    \caption{CLAWS sensor}
-    \label{fig:CLAWS}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.6\columnwidth]{Figures/C05_Quantitative_analysis/Offset/D01V1_life.png}
-    \caption{CLAWS sensor}
-    \label{fig:CLAWS}
+    \begin{minipage}{0.48\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/C05_Quantitative_analysis/Offset/D01V1.png}
+        \caption{Injection beam loss fitting result for D01V1}
+        \label{fig:D01V1_loss}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/C05_Quantitative_analysis/Offset/D01V1_life.png}
+        \caption{Beam lifetime fitting result for D01V1}
+        \label{fig:D01V1_lifetime}
+    \end{minipage}
 \end{figure}
