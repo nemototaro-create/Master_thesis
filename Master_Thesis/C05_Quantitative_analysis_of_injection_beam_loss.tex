@@ -1,81 +1,111 @@
 \chapter{Quantitative analysis of injection beam loss}\label{sec:Quantitative analysis of injection beam loss}
 
+\section{Injection beam loss monitoring during the 2025c and 2026ab operations}
+
+The beam current, injection efficiency, and injection beam losses are displayed on a Grafana dashboard, which can be accessed both from the collimator operation desk in the SuperKEKB control room and from personal computers via the web. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\columnwidth]{Figures/C05_Quantitative_analysis/monitor01.png}\\[-1.0pt]
+    \includegraphics[width=1.0\columnwidth]{Figures/C05_Quantitative_analysis/monitor02.png}\\[-1.0pt]
+    \includegraphics[width=1.0\columnwidth]{Figures/C05_Quantitative_analysis/monitor03.png}
+    \caption{Injection beam loss monitoring during the 2025c and 2026ab operations. The left and right columns shows the LER and HER, respectively. The first row shows the beam current, and the second row shows the injection efficiencies. The remaining plots show the injection beam losses at the vertical and horizontal collimators, where the first losses i the first 1 ms after injection are shown in green and those after 1 ms shown in yellow.}
+    \label{fig:Injection beam loss monitoring during the 2025c and 2026ab operations}
+\end{figure}
+
+
+
+
+
+
 \section{Collimator offset study}
 \subsection{Motivation}
-A collimator offset study measures the offset between the beam position coordinate and the collimator coordinate. By precisely determining this offset, the beam can be scraped symmetrically from both sides, enabling efficient collimation. The procedure is as follows:
+A collimator offset study measures the offset between the beam position coordinate and the collimator coordinate. By precisely determining this offset, the beam can be scraped symmetrically from both sides, enabling efficient collimation. When the center of the collimator coincides with the beam center, the beam loss at the collimator is minimized and the beam lifetime is maximized. The property is used to determine the offset. 
+
+\subsection{Measurement procedure}
+The procedure is as follows:
 
 \begin{enumerate}
     \item \textbf{Move both collimator jaws while keeping the jaw gap constant:}
-    Both jaws moved in the same direction, typically in steps of 50 um. 
+    Both jaws are moved in the same direction, typically in steps of 50 $\mu \mathrm{m} $. 
 
-    \item \textbf{Monitor the beam response}
-
-    \item \textbf{Plot the measured response :}
-    The center position of the collimator jaws is plotted on the x-axis, and the measured value is plotted on the y-axis. The offset is determined by fitting the resulting distribution and identifying the vertex of the fitting function.
+    \item \textbf{Monitor the beam response:}
+    If no significant response is observed, apply a beam bump to modify the beam orbit near the target collimator.
+    
+    \item \textbf{Fit the measured response:}
+    The center position of the collimator jaws is plotted on the x-axis, and the measured value is plotted on the y-axis. The distribution is fitted with a quartic function, 
+    \begin{equation}
+        y = a(x - x_0)^2 + b (x - x_0) + c, 
+    \end{equation}
+    and the offset is determined from the vertex position $-x_0$.
 
 \end{enumerate}
 
-Traditionally, the beam life is used as the beam response. For this study, we used injection beam loss as another response.
+Traditionally, the beam lifetime is used as the beam response. In this study, we additionally used the injection beam loss as the response. Unlike the beam lifetime, it can be measured during injection without requiring a dedicated measurement period. 
 
 \subsection{D02V1 collimator}
-The collimator offset study for D02V1 was conducted on November 14, 2025.
+The collimator offset study for D02V1 was conducted on November 14, 2025. The offset obtained from the injection beam loss was $-183 \pm 5 \mu \mathrm{m}$, while that from the beam lifetime was $-219 \pm 8 \mu\mathrm{m}$. The difference is 36 $\mu \mathrm{m} $, which is smaller than step width of 50 $\mu \mathrm{m} $. However, it corresponds to about 3.8 $\sigma$ when the statistical uncertainties are added in quadrature. This indicates that the two results are not consistent within their statistical errors, and that a systematic uncertainty of at least a few tens on $\mu \mathrm{m} $ is present. Possible sources include the choice of the fit function and fit range, and the difference in the beam response used by the two methods. 
 
 \begin{figure}[htbp]
     \centering
     \begin{minipage}{0.48\columnwidth}
         \centering
         \includegraphics[width=\textwidth]{Figures/C05_Quantitative_analysis/Offset/D02V1.png}
-        \caption{Injection beam loss fitting result for D02V1}
-        \label{fig:D02V1_loss}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\columnwidth}
         \centering
         \includegraphics[width=\textwidth]{Figures/C05_Quantitative_analysis/Offset/D02V1_life.png}
-        \caption{Beam lifetime fitting result for D02V1}
-        \label{fig:D02V1_lifetime}
     \end{minipage}
+    \caption{Fitting results for D02V1: injection beam loss (left) and beam lifetime (right).}
+    \label{fig:D02V1_fitting}
 \end{figure}
 
 
 \subsection{D03V4 collimator}
-The collimator offset study for D03V4 was conducted on November 14, 2025.
+The collimator offset study for D03V4 was conducted on November 14, 2025. During this measurement, the oscilloscope configuration was  changed, resulting in incorrect response values. Figure~\ref{fig:D03V4_fitting} shows the results after excluding the affect data. As a result, the data points are concentrated on one side of the vertex
+(roughly $-1.4$ to $+1.0\,\mathrm{mm}$), and the fit to the injection beam loss
+did not converge to a satisfactory result:
+$x_0 = -0.588 \pm 0.094\,\mathrm{mm}$.
+In contrast, the fit to the beam lifetime gave a good result,
+with an offset of $370 \pm 8\,\mu\mathrm{m}$.
 
 \begin{figure}[htbp]
     \centering
     \begin{minipage}{0.48\columnwidth}
         \centering
         \includegraphics[width=\textwidth]{Figures/C05_Quantitative_analysis/Offset/D03V4.png}
-        \caption{Injection beam loss fitting result for D03V4}
-        \label{fig:D03V4_loss}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\columnwidth}
         \centering
         \includegraphics[width=\textwidth]{Figures/C05_Quantitative_analysis/Offset/D03V4_life.png}
-        \caption{Beam lifetime fitting result for D03V4}
-        \label{fig:D03V4_lifetime}
     \end{minipage}
+    \caption{Fitting results for D03V4: injection beam loss (left) and beam lifetime (right).}
+    \label{fig:D03V4_fitting}
 \end{figure}
 
 
 
 \subsection{D01V1 collimator}
-The collimator offset study for D02V1 was conducted on January 29, 2026.
+The collimator offset study for D01V1 was conducted on January 29, 2026. No significant response was observed in the beam lifetime, because no effective magnet was available to create a beam bump and modify the beam orbit near the D01V1 collimator. In contrast, a significant response was observed in the injection beam loss(Figure~\ref{fig:D01V1_fitting}), so the fit could be performed and the offset was determined to be $x_0 = -0.353 \pm 0.008\,\mathrm{mm}$. This offset was then adopted as the actual collimator setting. These results suggest that the injection beam loss can be used for the collimator offset study even in a case when beam lifetime shows no significant response. 
+
 
 \begin{figure}[htbp]
     \centering
     \begin{minipage}{0.48\columnwidth}
         \centering
         \includegraphics[width=\textwidth]{Figures/C05_Quantitative_analysis/Offset/D01V1.png}
-        \caption{Injection beam loss fitting result for D01V1}
-        \label{fig:D01V1_loss}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\columnwidth}
         \centering
         \includegraphics[width=\textwidth]{Figures/C05_Quantitative_analysis/Offset/D01V1_life.png}
-        \caption{Beam lifetime fitting result for D01V1}
-        \label{fig:D01V1_lifetime}
     \end{minipage}
+    \caption{Fitting results for D01V1: injection beam loss (left) and beam lifetime (right).}
+    \label{fig:D01V1_fitting}
 \end{figure}
+
+\section{FFT analysis}
+
+\section{High bunch current study}
